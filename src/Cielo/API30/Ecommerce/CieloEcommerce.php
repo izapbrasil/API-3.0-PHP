@@ -1,6 +1,8 @@
 <?php
 namespace Cielo\API30\Ecommerce;
 
+use Cielo\API30\Ecommerce\Request\CieloRequestException;
+use Cielo\API30\Ecommerce\Request\CreateCardRequest;
 use Cielo\API30\Merchant;
 use Cielo\API30\Ecommerce\Request\CreateSaleRequest;
 use Cielo\API30\Ecommerce\Request\QuerySaleRequest;
@@ -37,6 +39,22 @@ class CieloEcommerce
 
         $this->merchant = $merchant;
         $this->environment = $environment;
+    }
+
+    /**
+     * Creates a card token.
+     *
+     * @param \Cielo\API30\Ecommerce\CreditCard $card The credit card data
+     *
+     * @return \Cielo\API30\Ecommerce\CreditCard The credit card object with token.
+     * @throws CieloRequestException if anything gets wrong.
+     * @see <a href="https://developercielo.github.io/Webservice-3.0/english.html#error-codes">Error Codes</a>
+     */
+    public function createCard(CreditCard $card)
+    {
+        $createCardRequest = new CreateCardRequest($this->merchant, $this->environment);
+
+        return $createCardRequest->execute($card);
     }
 
     /**

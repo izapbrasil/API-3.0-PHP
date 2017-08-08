@@ -34,6 +34,16 @@ class CreditCard implements \JsonSerializable
         $this->cardToken = isset($data->CardToken)? $data->CardToken: null;
     }
 
+    public static function fromJson($json)
+    {
+        $object = json_decode($json);
+
+        $card = new CreditCard();
+        $card->populate($object);
+
+        return $card;
+    }
+
     public function getCardNumber()
     {
         return $this->cardNumber;
