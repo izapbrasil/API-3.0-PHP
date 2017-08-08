@@ -6,14 +6,14 @@ interface Environment
     /**
      * Gets the environment's Api URL
      *
-     * @return the Api URL
+     * @return string Api URL
      */
     public function getApiUrl();
     
     /**
      * Gets the environment's Api Query URL
      *
-     * @return the Api Query URL
+     * @return string Api Query URL
      */
     public function getApiQueryURL();
 }
