@@ -18,6 +18,8 @@ class CreditCard implements \JsonSerializable
 
     private $cardToken;
 
+    private $customerName;
+
     public function jsonSerialize()
     {
         return get_object_vars($this);
@@ -32,6 +34,7 @@ class CreditCard implements \JsonSerializable
         $this->saveCard = isset($data->SaveCard)? !!$data->SaveCard: false;
         $this->brand = isset($data->Brand)? $data->Brand: null;
         $this->cardToken = isset($data->CardToken)? $data->CardToken: null;
+        $this->customerName = isset($data->CustomerName)? $data->CustomerName: null;
     }
 
     public static function fromJson($json)
@@ -119,5 +122,15 @@ class CreditCard implements \JsonSerializable
     {
         $this->cardToken = $cardToken;
         return $this;
+    }
+
+    public function getCustomerName()
+    {
+        return $this->customerName;
+    }
+
+    public function setCustomerName($customerName)
+    {
+        $this->customerName = $customerName;
     }
 }

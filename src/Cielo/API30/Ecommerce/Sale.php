@@ -89,6 +89,9 @@ class Sale implements \JsonSerializable
         return $this;
     }
 
+    /**
+     * @return Payment
+     */
     public function getPayment()
     {
         return $this->payment;

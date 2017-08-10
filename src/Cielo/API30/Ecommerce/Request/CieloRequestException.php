@@ -11,6 +11,9 @@ class CieloRequestException extends \Exception
         parent::__construct($message, $code, $previous);
     }
 
+    /**
+     * @return CieloError
+     */
     public function getCieloError()
     {
         return $this->cieloError;
