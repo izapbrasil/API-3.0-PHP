@@ -48,6 +48,9 @@ class Customer implements \JsonSerializable
         }
     }
 
+    /**
+     * @return Address
+     */
     public function address()
     {
         $address = new Address();
@@ -57,6 +60,9 @@ class Customer implements \JsonSerializable
         return $address;
     }
 
+    /**
+     * @return Address
+     */
     public function deliveryAddress()
     {
         $address = new Address();

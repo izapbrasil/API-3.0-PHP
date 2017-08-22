@@ -132,5 +132,6 @@ class CreditCard implements \JsonSerializable
     public function setCustomerName($customerName)
     {
         $this->customerName = $customerName;
+        return $this;
     }
 }
