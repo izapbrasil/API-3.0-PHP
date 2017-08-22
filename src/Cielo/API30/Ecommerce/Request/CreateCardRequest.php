@@ -12,7 +12,7 @@ use Cielo\API30\Merchant;
  * @author  Valdeci Jr <valdeci.junior@izap.com.br>
  * @version 1.0
  */
-class CreateCardRequest extends AbstractSaleRequest
+class CreateCardRequest extends AbstractRequest
 {
 
     private $environment;

@@ -4,7 +4,7 @@ namespace Cielo\API30\Ecommerce\Request;
 use Cielo\API30\Merchant;
 use Cielo\API30\Ecommerce\Sale;
 
-abstract class AbstractSaleRequest
+abstract class AbstractRequest
 {
 
     private $merchant;
@@ -18,7 +18,7 @@ abstract class AbstractSaleRequest
 
     protected abstract function unserialize($json);
 
-    protected function sendRequest($method, $url, Sale $sale = null)
+    protected function sendRequest($method, $url, \JsonSerializable $data = null)
     {
         $headers = [
             'Accept: application/json',
