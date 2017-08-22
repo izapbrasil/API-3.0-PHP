@@ -14,7 +14,11 @@ class Payment implements \JsonSerializable
 
     const PROVIDER_BRADESCO = 'Bradesco';
 
-    const PROVIDER_BANCO_DO_BRASIL = 'BancoDoBrasil';
+    const PROVIDER_BRADESCO_REGISTERED = 'Bradesco2';
+
+    const PROVIDER_BANCO_DO_BRASIL = 'BancodoBrasil';
+
+    const PROVIDER_BANCO_DO_BRASIL_REGISTERED = 'BancodoBrasil2';
 
     const PROVIDER_SIMULADO = 'Simulado';
 
