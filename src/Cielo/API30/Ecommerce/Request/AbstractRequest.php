@@ -44,8 +44,8 @@ abstract class AbstractRequest
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $method);
         }
         
-        if ($sale !== null) {
-            curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($sale));
+        if ($data !== null) {
+            curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
             
             $headers[] = 'Content-Type: application/json';
         } else {
