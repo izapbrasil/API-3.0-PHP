@@ -136,7 +136,7 @@ class CieloEcommerce
      * @param integer $amount
      *            Order value in cents
      *
-     * @return Sale The Sale with authorization, tid, etc. returned by Cielo.
+     * @return \Cielo\API30\Ecommerce\Payment The canceled Payment.
      *
      * @throws \Cielo\API30\Ecommerce\Request\CieloRequestException if anything gets wrong.
      *
