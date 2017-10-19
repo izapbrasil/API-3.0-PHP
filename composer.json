@@ -1,5 +1,5 @@
 {
-	"name": "izapbrasil/api-3.0-php",
+	"name": "izapbrasil/cielo-api-3.0-php",
 	"description": "Integração com a API 3.0 da Cielo",
 	"license": "MIT",
 	"type": "library",
