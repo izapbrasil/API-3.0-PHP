@@ -101,9 +101,9 @@ class FraudAnalysis implements \JsonSerializable
     }
 
     /**
-     * @param $sequence
+     * @param mixed $sequence
      *
-     * @return $this
+     * @return FraudAnalysis
      */
     public function setSequence($sequence)
     {
@@ -120,9 +120,9 @@ class FraudAnalysis implements \JsonSerializable
     }
 
     /**
-     * @param $sequenceCriteria
+     * @param mixed $sequenceCriteria
      *
-     * @return $this
+     * @return FraudAnalysis
      */
     public function setSequenceCriteria($sequenceCriteria)
     {
@@ -139,9 +139,9 @@ class FraudAnalysis implements \JsonSerializable
     }
 
     /**
-     * @param $captureOnLowRisk
+     * @param mixed $captureOnLowRisk
      *
-     * @return $this
+     * @return FraudAnalysis
      */
     public function setCaptureOnLowRisk($captureOnLowRisk)
     {
@@ -158,9 +158,9 @@ class FraudAnalysis implements \JsonSerializable
     }
 
     /**
-     * @param $voidOnHighRisk
+     * @param mixed $voidOnHighRisk
      *
-     * @return $this
+     * @return FraudAnalysis
      */
     public function setVoidOnHighRisk($voidOnHighRisk)
     {
@@ -177,9 +177,9 @@ class FraudAnalysis implements \JsonSerializable
     }
 
     /**
-     * @param $totalOrderAmount
+     * @param mixed $totalOrderAmount
      *
-     * @return $this
+     * @return FraudAnalysis
      */
     public function setTotalOrderAmount($totalOrderAmount)
     {
@@ -196,9 +196,9 @@ class FraudAnalysis implements \JsonSerializable
     }
 
     /**
-     * @param $fingerPrintId
+     * @param mixed $fingerPrintId
      *
-     * @return $this
+     * @return FraudAnalysis
      */
     public function setFingerPrintId($fingerPrintId)
     {
@@ -215,11 +215,11 @@ class FraudAnalysis implements \JsonSerializable
     }
 
     /**
-     * @param Browser $browser
+     * @param mixed $browser
      *
-     * @return $this
+     * @return FraudAnalysis
      */
-    public function setBrowser(Browser $browser)
+    public function setBrowser($browser)
     {
         $this->browser = $browser;
         return $this;
@@ -234,9 +234,9 @@ class FraudAnalysis implements \JsonSerializable
     }
 
     /**
-     * @param $cart
+     * @param mixed $cart
      *
-     * @return $this
+     * @return FraudAnalysis
      */
     public function setCart($cart)
     {
@@ -253,9 +253,9 @@ class FraudAnalysis implements \JsonSerializable
     }
 
     /**
-     * @param $merchantDefinedFields
+     * @param mixed $merchantDefinedFields
      *
-     * @return $this
+     * @return FraudAnalysis
      */
     public function setMerchantDefinedFields($merchantDefinedFields)
     {
@@ -272,9 +272,9 @@ class FraudAnalysis implements \JsonSerializable
     }
 
     /**
-     * @param $shipping
+     * @param mixed $shipping
      *
-     * @return $this
+     * @return FraudAnalysis
      */
     public function setShipping($shipping)
     {
@@ -291,9 +291,9 @@ class FraudAnalysis implements \JsonSerializable
     }
 
     /**
-     * @param $travel
+     * @param mixed $travel
      *
-     * @return $this
+     * @return FraudAnalysis
      */
     public function setTravel($travel)
     {
@@ -310,6 +310,17 @@ class FraudAnalysis implements \JsonSerializable
     }
 
     /**
+     * @param mixed $id
+     *
+     * @return FraudAnalysis
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    /**
      * @return mixed
      */
     public function getStatus()
@@ -318,10 +329,32 @@ class FraudAnalysis implements \JsonSerializable
     }
 
     /**
+     * @param mixed $status
+     *
+     * @return FraudAnalysis
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
      * @return mixed
      */
     public function getReplyData()
     {
         return $this->replyData;
+    }
+
+    /**
+     * @param mixed $replyData
+     *
+     * @return FraudAnalysis
+     */
+    public function setReplyData($replyData)
+    {
+        $this->replyData = $replyData;
+        return $this;
     }
 }

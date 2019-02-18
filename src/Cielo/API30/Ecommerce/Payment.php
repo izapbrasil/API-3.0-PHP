@@ -1078,7 +1078,7 @@ class Payment implements \JsonSerializable
     }
 
     /**
-     * @return mixed
+     * @return FraudAnalysis
      */
     public function getFraudAnalysis()
     {
