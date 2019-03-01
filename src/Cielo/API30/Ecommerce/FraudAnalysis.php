@@ -46,6 +46,8 @@ class FraudAnalysis implements \JsonSerializable
 
     private $replyData;
 
+    private $provider;
+
     /**
      * @return array
      */
@@ -90,6 +92,7 @@ class FraudAnalysis implements \JsonSerializable
         $this->merchantDefinedFields = isset($data->MerchantDefinedFields) ? $data->MerchantDefinedFields : null;
         $this->id = isset($data->Id) ? $data->Id : null;
         $this->status = isset($data->Status) ? $data->Status : null;
+        $this->provider = isset($data->Provider) ? $data->Provider : null;
     }
 
     /**
@@ -355,6 +358,25 @@ class FraudAnalysis implements \JsonSerializable
     public function setReplyData($replyData)
     {
         $this->replyData = $replyData;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProvider()
+    {
+        return $this->provider;
+    }
+
+    /**
+     * @param $provider
+     *
+     * @return $this
+     */
+    public function setProvider($provider)
+    {
+        $this->provider = $provider;
         return $this;
     }
 }
