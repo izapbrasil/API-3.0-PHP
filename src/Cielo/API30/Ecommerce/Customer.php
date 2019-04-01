@@ -23,6 +23,8 @@ class Customer implements \JsonSerializable
 
     private $deliveryAddress;
 
+    private $billingAddress;
+
     /**
      * Customer constructor.
      *
@@ -62,6 +64,11 @@ class Customer implements \JsonSerializable
             $this->deliveryAddress = new Address();
             $this->deliveryAddress->populate($data->DeliveryAddress);
         }
+
+        if (isset($data->BillingAddress)) {
+            $this->billingAddress = new Address();
+            $this->billingAddress->populate($data->BillingAddress);
+        }
     }
 
     /**
@@ -84,6 +91,18 @@ class Customer implements \JsonSerializable
         $address = new Address();
 
         $this->setDeliveryAddress($address);
+
+        return $address;
+    }
+
+    /**
+     * @return Address
+     */
+    public function billingAddress()
+    {
+        $address = new Address();
+
+        $this->setBillingAddress($address);
 
         return $address;
     }
@@ -218,6 +237,25 @@ class Customer implements \JsonSerializable
     public function setDeliveryAddress($deliveryAddress)
     {
         $this->deliveryAddress = $deliveryAddress;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBillingAddress()
+    {
+        return $this->billingAddress;
+    }
+
+    /**
+     * @param $billingAddress
+     *
+     * @return $this
+     */
+    public function setBillingAddress($billingAddress)
+    {
+        $this->billingAddress = $billingAddress;
         return $this;
     }
 }
